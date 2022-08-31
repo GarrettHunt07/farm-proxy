@@ -9,7 +9,7 @@ services:
     container_name: farm-proxy
     network_mode: "host"
     volumes:
-      - "./config/sample.toml:/conf/farm_proxy.toml"
+      - "./config/Main.toml:/conf/farm_proxy.toml"
     environment:
       - CONF_PATH=/conf/farm_proxy.toml
       - RUST_LOG=debug
