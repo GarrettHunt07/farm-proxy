@@ -1,0 +1,35 @@
+# Full server configuration
+[[server]]
+name = "S1"
+port = 3336
+#slushpool_bos_bonus = "Garretthunt2007"
+
+# Minimal server configuration
+[[server]]
+name = "S2"
+port = 3337
+#slushpool_bos_bonus = "Garretthunt2007"
+
+# Full target configuration
+[[target]]
+name = "SP-US"
+url = "stratum+tcp://us-east.stratum.slushpool.com/"
+user_identity = "Garretthunt2007.FarmProxy"
+
+[[target]]
+name = "SP-EU"
+url = "stratum+tcp://eu.stratum.slushpool.com"
+user_identity = "Garretthunt2007.FarmProxy"
+
+[[routing]]
+from = ["S1", "S2"]
+
+[[routing.goal]]
+hr_weight = 100
+name = "Goal 100%"
+
+[[routing.goal.level]]
+targets = ["SP-US"]
+
+[[routing.goal.level]]
+targets = ["SP-EU"]
